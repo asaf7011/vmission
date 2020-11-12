@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  become_user: root
+  gather_facts: false
+  tasks:
+  - name: Create a user "bob" with 2048-bit SSH key in ~bob/.ssh/id_rsa
+    user:
+      name: bob
+      uid: 1040
+      update_password: always
+      password: "{{ password|password_hash('sha512') }}"
+      shell: "/bin/bash"
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
+  
+  - name: Add ssh-public-key into bob's authorized_keys
+    authorized_key:
+      user: bob
+      state: present
+      key: "{{ lookup('file', '/home/bob/.ssh/id_rsa.pub') }}"
