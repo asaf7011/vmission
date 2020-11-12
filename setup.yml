@@ -1,8 +1,8 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
-  become_user: root
+  # become: true
+  #become_user: root
   gather_facts: false
   tasks:
   - name: Create a user "bob" with 2048-bit SSH key in ~bob/.ssh/id_rsa
