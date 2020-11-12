@@ -1,5 +1,5 @@
 # vmission:
-#### The following repo containts:
+#### The following repo contains:
 1. readme_bob.txt
 2. whats_going_on.sh
 3. setup.yaml ansible playbook
