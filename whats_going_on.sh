@@ -1,44 +1,44 @@
 #!/bin/bash
 
 
-echo "whats_going_on bash script" > ~/Documents/task/output.json
+echo "whats_going_on bash script" > ~/output.json
 
-echo "" >> ~/Documents/task/output.json
+echo "" >> ~/output.json
 
-echo "##########################" >> ~/Documents/task/output.json
-echo "OS DISTRIBUTION AND VERSION:" >> ~/Documents/task/output.json
-echo "" >> ~/Documents/task/output.json
-lsb_release -a >> ~/Documents/task/output.json
-echo "" >> ~/Documents/task/output.json
+echo "##########################" >> ~/output.json
+echo "OS DISTRIBUTION AND VERSION:" >> ~/output.json
+echo "" >> ~/output.json
+lsb_release -a >> ~/output.json
+echo "" >> ~/output.json
 
-echo "##########################" >> ~/Documents/task/output.json
-echo "DATE:" >> ~/Documents/task/output.json
-echo "" >> ~/Documents/task/output.json
-date >> ~/Documents/task/output.json
-echo "" >> ~/Documents/task/output.json
+echo "##########################" >> ~/output.json
+echo "DATE:" >> ~/output.json
+echo "" >> ~/output.json
+date >> ~/output.json
+echo "" >> ~/output.json
 
-echo "##########################" >> ~/Documents/task/output.json
-echo "FREE MEMORY:" >> ~/Documents/task/output.json
-free -m >> ~/Documents/task/output.json
-echo "" >> ~/Documents/task/output.json
+echo "##########################" >> ~/output.json
+echo "FREE MEMORY:" >> ~/output.json
+free -m >> ~/output.json
+echo "" >> ~/output.json
 
-echo "##########################" >> ~/Documents/task/output.json
-echo "FREE SPACE ON /:" >> ~/Documents/task/output.json
-df -h / >> ~/Documents/task/output.json
-echo "" >> ~/Documents/task/output.json
+echo "##########################" >> ~/output.json
+echo "FREE SPACE ON /:" >> ~/output.json
+df -h / >> ~/output.json
+echo "" >> ~/output.json
 
 
-echo "##########################" >> ~/Documents/task/output.json
-echo "JENKINS BUILD NUMBER:" >> ~/Documents/task/output.json
+echo "##########################" >> ~/output.json
+echo "JENKINS BUILD NUMBER:" >> ~/output.json
 
 export JENKINS_BUILD_NUMBER=$(cat /var/lib/jenkins/jobs/verint/nextBuildNumber)
 value=$JENKINS_BUILD_NUMBER
 ((value=value-1))
-echo $value >> ~/Documents/task/output.json
-echo "" >> ~/Documents/task/output.json
+echo $value >> ~/output.json
+echo "" >> ~/output.json
 
-echo "##########################" >> ~/Documents/task/output.json
-echo "JENKINS WORKSPACE PATH:" >> ~/Documents/task/output.json
+echo "##########################" >> ~/output.json
+echo "JENKINS WORKSPACE PATH:" >> ~/output.json
 export JENKINS_HOME=/var/lib/jenkins/workspace 
-echo ${JENKINS_HOME} >> ~/Documents/task/output.json
-echo "" >> ~/Documents/task/output.json
+echo ${JENKINS_HOME} >> ~/output.json
+echo "" >> ~/output.json
