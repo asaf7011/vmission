@@ -2,7 +2,9 @@
 - hosts: localhost
   connection: local
   become: true
-  become_user: root
+  remote_user: user
+  become_method: sudo
+  #become_user: root
   gather_facts: false
 
   tasks:
@@ -22,3 +24,7 @@
       user: bob
       state: present
       key: "{{ lookup('file', '/home/bob/.ssh/id_rsa.pub') }}"
+
+      #  - name: get remote file contents
+      #    command: "cat /home/bob/.ssh/id_rsa.pub"
+      #    register: key
