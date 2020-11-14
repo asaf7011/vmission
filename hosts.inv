@@ -1,2 +1,2 @@
 [targetHost]
-localhost ansible_ssh_user=user
+localhost
